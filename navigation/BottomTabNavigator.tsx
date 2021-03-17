@@ -6,7 +6,7 @@ import { AntDesign, MaterialIcons, Ionicons } from "@expo/vector-icons";
 
 import Colors from "../constants/Colors";
 import useColorScheme from "../hooks/useColorScheme";
-import TabOneScreen from "../screens/TabOneScreen";
+import HomeScreen from "../screens/HomeScreen";
 import TabTwoScreen from "../screens/TabTwoScreen";
 import { BottomTabParamList, HomeParamList, TabTwoParamList } from "../types";
 
@@ -22,7 +22,7 @@ export default function BottomTabNavigator() {
     >
       <BottomTab.Screen
         name="Home"
-        component={TabOneNavigator}
+        component={HomeNavigator}
         options={{
           tabBarIcon: ({ color }) => (
             <AntDesign name="home" size={24} color={color} />
@@ -64,12 +64,12 @@ export default function BottomTabNavigator() {
 // https://reactnavigation.org/docs/tab-based-navigation#a-stack-navigator-for-each-tab
 const HomeStack = createStackNavigator<HomeParamList>();
 
-function TabOneNavigator() {
+function HomeNavigator() {
   return (
     <HomeStack.Navigator>
       <HomeStack.Screen
         name="HomeScreen"
-        component={TabOneScreen}
+        component={HomeScreen}
         options={{ headerShown: false }}
       />
     </HomeStack.Navigator>
